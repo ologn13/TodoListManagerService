@@ -9,7 +9,7 @@ POSTMAN can be used to make requests to api's.
 ## How to run server and tests?
 cd TodoListManagerService
 
-docker-compose -f docker-compose-dev.yml up --build
+docker-compose -f docker-compose-dev.yml up -d --build
 
 docker-compose -f docker-compose-dev.yml run todolistmanagerservice python run_tests.py test
 
