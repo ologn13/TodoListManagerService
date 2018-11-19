@@ -1,0 +1,18 @@
+# base image
+FROM python:3.7-alpine3.7
+
+# Working directory
+WORKDIR /usr/src/TodoListManagerService
+
+# Add and Install Requirements
+COPY dependencies.txt /usr/src/TodoListManagerService/dependencies.txt
+RUN pip install -r dependencies.txt
+
+# Add Service Code
+COPY . /usr/src/TodoListManagerService
+
+# Run tests
+CMD python run_tests.py test
+
+# Run Server
+CMD python manage.py

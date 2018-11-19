@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+  todolistmanagerservice:
+    build:
+      context: .
+      dockerfile: Dockerfile-TodoListManagerService-dev
+    volumes:
+      - '.:/usr/src/TodoListManagerService'
+    ports:
+      - 5000:5000
+    environment:
+      - FLASK_APP=project/__init__.py
+      - FLASK_ENV=development
+      - APP_SETTINGS=project.config.DevelopmentConfig
+      - DATABASE_URL=sqlite:///todotasks.db
+      - DATABASE_TEST_URL=sqlite:///todotasks_test.db

@@ -1,0 +1,9 @@
+.idea
+__pycache__
+service_venv
+todotasks.db
+project/todotasks.db
+project/todotasks_test.db
+Dockerfile-TodoListManagerService-dev
+Dockerfile-TodoListManagerService-prod
+
